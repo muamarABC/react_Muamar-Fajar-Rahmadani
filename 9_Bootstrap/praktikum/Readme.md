@@ -1,1 +1,0 @@
-cara optimasi boostrap adalah dengan mendownlaod boostrap
