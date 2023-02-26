@@ -1,5 +1,5 @@
 Resume Materi Minggu 2 **Bootstrap**
-![image.png](https://raw.githubusercontent.com/muamarABC/react_Muamar-Fajar-Rahmadanii/master/9_Bootstrap/praktikum/bs.png?token=GHSAT0AAAAAAB65MUWN3PHJMA2LKHLFGXTGY73OIJQ)
+![image.png](https://raw.githubusercontent.com/muamarABC/react_Muamar-Fajar-Rahmadanii/master/9_Bootstrap/praktikum/bs.png?token=GHSAT0AAAAAAB65MUWNGUNSEP6YXQ3DSOT2Y73OZBA)
 
 Bootstap adalah Frontend Framework dari **HTML** **CSS** yang berfungsi untuk mendesain *reponsive* dengan cepat dan mudah. Framework ini sangat mudah digunakan hanya dengan melakukan copy link pada website Bootstap agar bisa berjalan pada kode HTML kita, namun ada cara yang lebih optimal yaitu dengan menginstal atau mendownload Bootstrap ke device kita. 
 
