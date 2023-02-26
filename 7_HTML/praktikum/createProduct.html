@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Create Product</h1>
+    <h2>Detail Product</h2>
+    <form>
+        <div>
+            <label for="product-name">Product Name : <br></label>
+            <input id="product-name" type="text">
+        </div>
+        <label for="product-category">Product Category : <br></label>
+        <select> 
+            <option>    </option>
+            <option>Elektronik</option>
+        </select>
+    </form>
+
+    <form action="Product">
+        <legend>
+            Product Freshness :
+        </legend>
+        <input type="radio" id="Fresh" name="Fresh" value="new">
+        <label for="Fresh">Brand New</label><br>
+        <input type="radio" id="Fresh" name="Fresh" value="hank">
+        <label for="Fresh">Second Hank</label><br>
+        <input type="radio" id="Fresh" name="Fresh" value="bished">
+        <label for="Fresh">Refurbished</label><br><br>
+    </form>
+
+    <div>
+        <label>image of Froduct</label>
+        <input type="file" />
+    </div>
+    <div>
+        <label>Additional Descripion</label>
+        <br>
+        <textarea>
+        </textarea>
+    </div>
+    <div>
+        <label>Product price</label>
+        <br>
+        <input required type="number" id="harga" name="harga" value="$ 100" />
+        <br>
+        <a href="landingPage.html">
+            <button>Submit</button>
+        </a>
+    </div>
+
+</body>
+
+</html>

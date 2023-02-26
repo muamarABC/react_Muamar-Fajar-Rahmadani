@@ -1,0 +1,45 @@
+body {
+    margin: 0 0;
+}
+
+ul a {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+.conten-pertama p {
+    margin-top: -20px;
+    max-width: 550px;
+    font-size: 24px;
+}
+
+#Start {
+    border-style: groove;
+    border-color: black;
+    background-color: white;
+    font-size: 16px;
+    padding: 10px 27px;
+    margin-top: 50px;
+}
+
+#Watch {
+    background-color: white;
+    font-size: 16px;
+    padding: 10px 27px;
+    border: none;
+}
+
+.conten-kedua button {
+    background-color: white;
+    border-style: groove;
+    border-color: black;
+    font-size: 16px;
+    padding: 10px 27px;
+}
+
+footer {
+    margin-left: 90px;
+}
