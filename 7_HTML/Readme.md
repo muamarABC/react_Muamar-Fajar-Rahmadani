@@ -1,10 +1,10 @@
 Resume Materi Minggu 2 **HTML**
 
 HTML atau kepanjangannya *Hypertext Markup Language* adalah seuah standar yang digunakan secara luas untuk menampilkan halaman web, atau sederhananya bahasa markup untuk membuat web. Umumnya situs web menyertakan sejumlah HTML yang berbeda-beda. Masing-masing dari halaman tersebut terdiri dari serangkaian *elements* yang tersusun membentuk sebuah halaman website. adapun kegunaan HTML sebagai berikut:
-*Membuat Struktur dari halaman website
-*Mengatur tampilan dan isi dari halaman web
-*Membuat tabel dengan tag HTML *table*
-*Membuat form HTML
+* Membuat Struktur dari halaman website
+* Mengatur tampilan dan isi dari halaman web
+* Membuat tabel dengan tag HTML table
+* Membuat form HTML
 Di atas adalah beberapa dari kegunaan HTML, sebenarnya sangat banyak namun saya cukup menjabarkan 4 poin.
 
 HTML memiliki berbagai versi dari semenjak awal di perkenalkan W3C (World Wide Web Consortium), hingga sampai saat ini sudah mencapai versi HTML5, dimana versi ini mendukun untuk embed audio dan video dengan memanfaatkan tag *<audio></audio>* dan *<video></video>*. Adapun ciri khas dari versi ini yaitu deklarasinya *<!DOCTYPE html> yang menandakan bahwa HTML yang digunakan adalah HTML5.
