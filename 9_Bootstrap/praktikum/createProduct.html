@@ -43,61 +43,77 @@
     <div class="container">
         <div class="Row1">
             <img src="Bs.png" alt="">
-            <h1>Create Product</h1>
+            <h1 style="">Create Product</h1>
             <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
         </div>
+
         <div class="Row2">
             <h2>Detail Product</h2>
             <form>
-                <div>
-                    <label for="product-name">Product Name : <br></label>
-                    <input id="product-name" type="text">
+                <div class="mb-3">
+                    <label for="product-name" class="form-label">Product Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"></div>
                 </div>
-                <label for="product-category">Product Category : <br></label>
-                <select> 
-                    <option>Choose...</option>
-                    <option>makanan</option>
-                </select>
-            </form>
-            <div>
-                <label>image of Froduct</label><br>
-                <div class="form-group">
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-            </div>
-            <form action="Product">
-                <legend>
-                    Product Freshness :
-                </legend>
-                <input type="radio" id="Fresh" name="Fresh" value="new">
-                <label for="Fresh">Brand New</label><br>
-                <input type="radio" id="Fresh" name="Fresh" value="hank">
-                <label for="Fresh">Second Hank</label><br>
-                <input type="radio" id="Fresh" name="Fresh" value="bished">
-                <label for="Fresh">Refurbished</label><br><br>
-            </form>
-            <div>
-                <label>Additional Descripion</label>
-                <br>
-                <textarea>
-                </textarea>
-            </div>
-            <div>
-                <label>Product price</label>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
+                <form class="was-validated">
+                    <div class="mb-3">
+                        <label>Product Category</label>
+                        <select class="form-select" required aria-label="select example">
+                        <option value="">Choose...</option>
+                        <option value="Kosmetik">Kosmetik</option>
+                        <option value="Makanan">Makanan</option>
+                        <option value="Elektronik">Elektronik</option>
+                      </select>
+                        <div class="invalid-feedback">Example invalid select feedback</div>
                     </div>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <div class="input-group-append">
+                    <div class="radio">
+                        <label style="font-size: 20px;">Product Freshness :</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+                            <label class="form-check-label" for="validationFormCheck2">Brand New</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+                            <label class="form-check-label" for="validationFormCheck2">Second Hank</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+                            <label class="form-check-label" for="validationFormCheck3">Refurbished</label>
+                            <div class="invalid-feedback">More example invalid feedback text</div>
+                        </div>
+
                     </div>
-                </div>
-            </div>
-            <div class="submit">
-                <a href="landingPage.html">
-                    <button class="Btn-S">Submit</button>
-                </a>
-            </div>
+                    <div class="mb-3">
+                        <label>Image of Froduct :</label>
+                        <input type="file" class="form-control" aria-label="file example" required>
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="validationTextarea" class="form-label">Additional Descripion</label>
+                        <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message in the textarea.
+                        </div>
+                    </div>
+                    <div>
+                        <label>Product price</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">$</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <a href="landingPage.html">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </a>
+                    </div>
+                </form>
+
+
         </div>
     </div>
 

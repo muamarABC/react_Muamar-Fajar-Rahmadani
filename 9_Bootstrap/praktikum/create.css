@@ -35,12 +35,13 @@ select {
 
 input[type=file]::file-selector-button {
     width: 30%;
-    margin: 8px 0px 0px 0px;
+    margin: 8px px 0px 0px;
     display: inline-block;
-    width: 90px;
+    width: 120px;
     height: 32px;
     text-align: center;
     color: white;
+    border: solid #0D6EFD;
     border-radius: 4px;
     background: #0D6EFD;
     border: #0D6EFD;
@@ -49,7 +50,7 @@ input[type=file]::file-selector-button {
 textarea {
     width: 70%;
     display: flex;
-    padding: 5px 12px 6px;
+    padding: 0px 2px 2px 2px;
     flex-direction: row;
     align-items: flex-start;
     background: white;
