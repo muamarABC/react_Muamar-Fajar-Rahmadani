@@ -16,9 +16,12 @@ Pada hari senin tanggal 27 februari 2023  melakukan pembelajaran live session de
     * **Cons** Jika Nilai yang ada pada sebuah variable dipastikan tidak akan berubah kita bsia menggunakan Variable Cons ini.
 * Pengertian Scoping
     Variable yang bisa kita akses dalam Scope tertentu tetapi ada Variable yang harus masuk ke Scope tertentu baru bisa diakses, dimana ada **Global Scope** dan **Block Scope**. Dijelaskan mengenai Perbedaan scoping global dan block.
-* Pengertian Hoisting (kapan kita menggunakan variable, fungsinya mengatur pendeklarasian variable sesuai dengan flow nya) 
+* Pengertian Hoisting (kapan kita menggunakan variable, fungsinya mengatur pendeklarasian variable sesuai dengan flow nya)
+
+![image.png](https://ibb.co/56gxVtq)
+
 * Pengertian value reference (Primitive & Objects)
 * Menjelaskan apa itu objects, array, function, date, set, map, weak set, dan weak map
 * Penjelasan apa itu Destructuring dilanjut dengan Pengertian Method dimana ada Method Map dan filter
-* Pengertian DOM dan Menjelaskan beberapa event pada DOM untuk lengkapnya bisa kita lihat pada https://www.w3schools.com/jsref/dom_obj_event.asp
+* Pengertian DOM adalah Document Object Model adalah API untuk HTML yang merepresentasikan halaman web pada suatu dokumen menjadi sebuah object. dan Menjelaskan beberapa event pada DOM untuk lengkapnya bisa kita lihat pada https://www.w3schools.com/jsref/dom_obj_event.asp
 
