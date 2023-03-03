@@ -18,7 +18,7 @@ Pada hari senin tanggal 27 februari 2023  melakukan pembelajaran live session de
     Variable yang bisa kita akses dalam Scope tertentu tetapi ada Variable yang harus masuk ke Scope tertentu baru bisa diakses, dimana ada **Global Scope** dan **Block Scope**. Dijelaskan mengenai Perbedaan scoping global dan block.
 * Pengertian Hoisting (kapan kita menggunakan variable, fungsinya mengatur pendeklarasian variable sesuai dengan flow nya)
 
-![image.png](https://ibb.co/56gxVtq)
+![image.png](https://i.ibb.co/FKLqtNG/hosting.png)
 
 * Pengertian value reference (Primitive & Objects)
 * Menjelaskan apa itu objects, array, function, date, set, map, weak set, dan weak map
