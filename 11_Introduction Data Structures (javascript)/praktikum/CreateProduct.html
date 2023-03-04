@@ -86,53 +86,80 @@
 
             </div>
         </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-        <script>
-            var deleteButton = document.getElementById("delete-button");
-
-            deleteButton.addEventListener("click", function(event) {
-                event.preventDefault();
-
-                var tableBody = document.getElementById("databel");
-                var lastRow = tableBody.lastElementChild;
-                tableBody.removeChild(lastRow);
-            });
-
-
-
-            function inputdata() {
-                var name = document.forms['datapribadi']['productName'].value;
-                var categry = document.forms['datapribadi']['ProductCategory'].value;
-                var File = document.forms['datapribadi']['uploadFile'].value;
-                var Freshness = document.forms['datapribadi']['btnRadio'].value;;
-                var Description = document.forms['datapribadi']['Description'].value;
-                var harga = document.forms['datapribadi']['Price'].value;
-                var tabel = document.getElementById("databel");
-
-                var baris = tabel.insertRow(1);
-
-                let Kolom1 = baris.insertCell(0);
-                var Kolom2 = baris.insertCell(1);
-                var Kolom3 = baris.insertCell(2);
-                var Kolom4 = baris.insertCell(3);
-                var Kolom5 = baris.insertCell(4);
-                var Kolom6 = baris.insertCell(5);
+        <div class="row">
+            <table class="table" id="databel">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Category</th>
+                        <th scope="col">Image Of Product</th>
+                        <th scope="col">Product Freshness</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="col-md-2">
+                <input type="text" class="form-control" id="Search" placeholder="Search by Product Name">
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" id="delete-button">Deletion</button>
+                <button type="button" onclick='databel()' class="btn btn-outline-primary" id="search-button">Search</button>
+            </div>
+        </div>
+        </form>
+    </div>
 
 
-                Kolom1.innerHTML = name;
-                Kolom2.innerHTML = categry;
-                Kolom3.innerHTML = File;
-                Kolom4.innerHTML = Freshness;
-                Kolom5.innerHTML = Description;
-                Kolom6.innerHTML = harga;
-            }
-        </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script>
+        var deleteButton = document.getElementById("delete-button");
+
+        deleteButton.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            var tableBody = document.getElementById("databel");
+            var lastRow = tableBody.lastElementChild;
+            tableBody.removeChild(lastRow);
+        });
+
+
+
+        function inputdata() {
+            var name = document.forms['datapribadi']['productName'].value;
+            var categry = document.forms['datapribadi']['ProductCategory'].value;
+            var File = document.forms['datapribadi']['uploadFile'].value;
+            var Freshness = document.forms['datapribadi']['btnRadio'].value;;
+            var Description = document.forms['datapribadi']['Description'].value;
+            var harga = document.forms['datapribadi']['Price'].value;
+            var tabel = document.getElementById("databel");
+
+            var baris = tabel.insertRow(1);
+
+            let Kolom1 = baris.insertCell(0);
+            var Kolom2 = baris.insertCell(1);
+            var Kolom3 = baris.insertCell(2);
+            var Kolom4 = baris.insertCell(3);
+            var Kolom5 = baris.insertCell(4);
+            var Kolom6 = baris.insertCell(5);
+
+
+            Kolom1.innerHTML = name;
+            Kolom2.innerHTML = categry;
+            Kolom3.innerHTML = File;
+            Kolom4.innerHTML = Freshness;
+            Kolom5.innerHTML = Description;
+            Kolom6.innerHTML = harga;
+        }
+    </script>
 
 </body>
 

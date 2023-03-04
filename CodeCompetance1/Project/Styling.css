@@ -1,5 +1,5 @@
 .banner {
-    background: url("toni.jpg") no-repeat center center;
+    background: url("gambar/toni.jpg") no-repeat center center;
     background-size: cover;
     padding-top: 15%;
     padding-bottom: 20%;
@@ -23,7 +23,7 @@
 }
 
 .layanan {
-    background: url("bg2.jpg") no-repeat center center;
+    background: url("gambar/bg2.jpg") no-repeat center center;
     background-size: cover;
     padding-top: 80%;
     padding-bottom: 80%;
