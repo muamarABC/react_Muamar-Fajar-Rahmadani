@@ -40,17 +40,17 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-
-                <h1>Create Product</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reprehenderit in officiis, voluptas aliquid omnis nemo? Totam beatae vel voluptatibus cum, itaque laborum ratione, omnis, dolorem nobis sed ipsam culpa.</p>
-                <form name="datapribadi" method="" action="">
+                <img src="gambar/bs.png" style="width: 15%; margin-top: 8%; margin-left: 42%; margin-bottom: 5%;">
+                <h1 style="text-align: center;">Create Product</h1>
+                <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 20px; margin-top: 5%; margin-bottom: 5%;">Create Your Produt For Sell in Our Website, Please write correcctly and according to the existing conditions. I hope your item sells quickly, We're Happy to Help You : )</p>
+                <form name="Create-Product" onsubmit="return validateForm()">
                     <div class="form-group">
                         <label for="productName">Product Name</label>
-                        <input type="text" class="form-control" name="productName" id="exampleFormControlInput1" placeholder="Input Product Name...">
+                        <input type="text" class="form-control" name="productName" id="productName" placeholder="Input Product Name...">
                     </div>
                     <div class="form-group">
                         <label for="ProductCategory">Product Category</label>
-                        <select class="form-control" name="ProductCategory" id="exampleFormControlSelect1" value="Input Category">
+                        <select class="form-control" name="ProductCategory" id="ProductCategory" value="Input Category">
                             <option>Fashion</option>
                             <option>Elektronik</option>
                             <option>Makanan</option>
@@ -63,9 +63,9 @@
 
                     <p>Product Freshness</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="btnRadio" value="Brand New" id="Radio1">Brand New<br>
-                        <input class="form-check-input" type="radio" name="btnRadio" value="Second Hand" id="Radio2">Second Hand<br>
-                        <input class="form-check-input" type="radio" name="btnRadio" value="Refufbhised" id="Radio3">Refufbhised<br>
+                        <input class="form-check-input" type="radio" name="btnRadio" value="Brand New" id="btnRadio">Brand New<br>
+                        <input class="form-check-input" type="radio" name="btnRadio" value="Second Hand" id="btnRadio">Second Hand<br>
+                        <input class="form-check-input" type="radio" name="btnRadio" value="Refufbhised" id="btnRadio">Refufbhised<br>
                     </div>
                     <div class="form-group">
                         <label for="Description">Description</label>
@@ -76,11 +76,11 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">$</span>
                             </div>
-                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="Price">
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="Price" id="Price">
                             <div class="input-group-append">
                             </div>
                         </div>
-                        <button type="button" onClick='inputdata()' class="btn btn-Submit">Submit</button>
+                        <button type="submit" class="btn btn-primary" style="margin-left: 50%;">Submit</button>
 
                     </div>
 
@@ -94,43 +94,44 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
         <script>
-            var deleteButton = document.getElementById("delete-button");
-
-            deleteButton.addEventListener("click", function(event) {
-                event.preventDefault();
-
-                var tableBody = document.getElementById("databel");
-                var lastRow = tableBody.lastElementChild;
-                tableBody.removeChild(lastRow);
+            //Membatasi Inputan 25 Karakter dan memberi alert ketika lebih dari 10
+            var inputNamaProduct = document.getElementById("productName");
+            inputNamaProduct.addEventListener("input", function() {
+                if (this.value.length >= 10) {
+                    alert("Last Name must not exceed " + 25 + " characters");
+                    this.value = this.value.slice(0, 25);
+                }
             });
-
-
-
-            function inputdata() {
-                var name = document.forms['datapribadi']['productName'].value;
-                var categry = document.forms['datapribadi']['ProductCategory'].value;
-                var File = document.forms['datapribadi']['uploadFile'].value;
-                var Freshness = document.forms['datapribadi']['btnRadio'].value;;
-                var Description = document.forms['datapribadi']['Description'].value;
-                var harga = document.forms['datapribadi']['Price'].value;
-                var tabel = document.getElementById("databel");
-
-                var baris = tabel.insertRow(1);
-
-                let Kolom1 = baris.insertCell(0);
-                var Kolom2 = baris.insertCell(1);
-                var Kolom3 = baris.insertCell(2);
-                var Kolom4 = baris.insertCell(3);
-                var Kolom5 = baris.insertCell(4);
-                var Kolom6 = baris.insertCell(5);
-
-
-                Kolom1.innerHTML = name;
-                Kolom2.innerHTML = categry;
-                Kolom3.innerHTML = File;
-                Kolom4.innerHTML = Freshness;
-                Kolom5.innerHTML = Description;
-                Kolom6.innerHTML = harga;
+            // Melakukan Validasi Form 
+            function validateForm() {
+                if (document.forms["Create-Product"]["productName"].value == "") {
+                    alert("Please enter a valid Prouct name");
+                    document.forms["Create-Product"]["productName"].focus();
+                    return false;
+                }
+                if (document.forms['Create-Product']['Price'].value == "") {
+                    alert("Please enter a valid Prouct Price");
+                    document.forms['Create-Product']['Price'].focus();
+                    return false;
+                }
+                if (document.forms['Create-Product']['ProductCategory'].value == "") {
+                    alert("The Product Category field must be filled in");
+                    document.forms['Create-Product']['ProductCategory'].focus();
+                    return false;
+                }
+                if (document.forms['Create-Product']['uploadFile'].value == "") {
+                    alert("The File field must be filled in");
+                }
+                if (document.forms['Create-Product']['Description'].value = "") {
+                    alert("The Description field must be filled in");
+                    document.forms['Create-Product']['uploadFile'].focus();
+                    return false;
+                }
+                if (document.forms['Create-Product']['btnRadio'].value = "") {
+                    alert("The roduct Freshness field must be filled in");
+                    document.forms['Create-Product']['btnRadio'].focus();
+                    return false;
+                }
             }
         </script>
 
