@@ -95,7 +95,7 @@
         </div>
 
         <div class="row" style="margin-top: 5%;">
-            <table class="table" id="databel">
+            <table class="table" id="dataTable">
                 <thead>
                     <tr>
                         <!-- Untuk Membuat Head dari Table -->
@@ -176,26 +176,26 @@
             var deleteTable = document.getElementById("delete-button");
             deleteTable.addEventListener("click", function(event) {
                 event.preventDefault();
-                var table = document.getElementById("databel");
-                var lastRow = table.lastElementChild;
-                table.removeChild(lastRow);
+                var table = document.getElementById("dataTable");
+                var RowTerakhir = table.lastElementChild;
+                table.removeChild(RowTerakhir);
             });
         }
 
         // Function Untuk Melakukan penginputan data kedalam table
         function inputdata() {
             // Deklarasi Variable untuk mengambil Value inputan dari form
-            var name = document.forms['dataProduct']['productName'].value;
+            var nameProduct = document.forms['dataProduct']['productName'].value;
             var category = document.forms['dataProduct']['ProductCategory'].value;
-            var File = document.forms['dataProduct']['uploadFile'].value;
+            var FileUpload = document.forms['dataProduct']['uploadFile'].value;
             var Freshness = document.forms['dataProduct']['btnRadio'].value;
             var Description = document.forms['dataProduct']['Description'].value;
-            var harga = document.forms['dataProduct']['Price'].value;
-            var tabel = document.getElementById("databel");
+            var hargaBarang = document.forms['dataProduct']['Price'].value;
+            var tabel = document.getElementById("dataTable");
 
             var baris = tabel.insertRow(1);
             // Melakukan Insert Variable inputan ke dalam Table
-            let Kolom1 = baris.insertCell(0);
+            var Kolom1 = baris.insertCell(0);
             var Kolom2 = baris.insertCell(1);
             var Kolom3 = baris.insertCell(2);
             var Kolom4 = baris.insertCell(3);
@@ -203,12 +203,12 @@
             var Kolom6 = baris.insertCell(5);
 
             // Untuk menamilkan Output kedalam table
-            Kolom1.innerHTML = name;
+            Kolom1.innerHTML = nameProduct;
             Kolom2.innerHTML = category;
-            Kolom3.innerHTML = File;
+            Kolom3.innerHTML = FileUpload;
             Kolom4.innerHTML = Freshness;
             Kolom5.innerHTML = Description;
-            Kolom6.innerHTML = harga;
+            Kolom6.innerHTML = hargaBarang;
         }
     </script>
 
