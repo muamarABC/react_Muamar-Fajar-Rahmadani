@@ -27,6 +27,8 @@
     background-size: cover;
     padding-top: 80%;
     padding-bottom: 80%;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .gambar-krj {
