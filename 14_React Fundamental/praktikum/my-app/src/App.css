@@ -1,0 +1,17 @@
+.App {
+    text-align: center;
+}
+
+.Icon-bs {
+    width: "15%";
+    margin-top: "8%";
+    margin-left: "42%";
+    margin-bottom: "5%";
+}
+
+.Icon-bs>h1 {
+    width: "15%";
+    margin-top: "8%";
+    margin-left: "42%";
+    margin-bottom: "5%";
+}
