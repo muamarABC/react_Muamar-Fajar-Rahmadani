@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '..gambar/bs.png'
 
 export default function main(){
     return (<>
@@ -7,22 +8,9 @@ export default function main(){
         {/* Penambahan icon dan diotimalisasi dengan style */}
         <img
           src="gambar/bs.png"
-          style={{
-            width: "15%",
-            marginTop: "8%",
-            marginLeft: "42%",
-            marginBottom: "5%"
-          }}
         />
         <h1 style={{ textAlign: "center" }}>Create Product</h1>
         <p
-          style={{
-            fontFamily:
-              '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
-            fontSize: 20,
-            marginTop: "5%",
-            marginBottom: "5%"
-          }}
         >
           Create Your Produt For Sell in Our Website, Please write correcctly
           and according to the existing conditions. I hope your item sells
