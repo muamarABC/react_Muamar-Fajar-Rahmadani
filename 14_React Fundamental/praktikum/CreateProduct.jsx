@@ -57,7 +57,7 @@
   </nav>
   <div className="container">
     <div className="row">
-      <div className="col-md-2" />
+      
       <div className="col-md-8">
         {/* Penambahan icon dan diotimalisasi dengan style */}
         <img
