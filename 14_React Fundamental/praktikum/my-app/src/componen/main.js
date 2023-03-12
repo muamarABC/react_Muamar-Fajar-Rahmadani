@@ -1,17 +1,29 @@
-import './App.css';
+import React from 'react'
 
-function App() {
-    return ( 
-    <div className="container">
-    <div className="row">
-      
+export default function main(){
+    return (<>
+   <div className="row">
       <div className="col-md-8">
         {/* Penambahan icon dan diotimalisasi dengan style */}
         <img
           src="gambar/bs.png"
+          style={{
+            width: "15%",
+            marginTop: "8%",
+            marginLeft: "42%",
+            marginBottom: "5%"
+          }}
         />
         <h1 style={{ textAlign: "center" }}>Create Product</h1>
-        <p>
+        <p
+          style={{
+            fontFamily:
+              '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
+            fontSize: 20,
+            marginTop: "5%",
+            marginBottom: "5%"
+          }}
+        >
           Create Your Produt For Sell in Our Website, Please write correcctly
           and according to the existing conditions. I hope your item sells
           quickly, We're Happy to Help You : )
@@ -46,7 +58,7 @@ function App() {
               <option>Makanan</option>
             </select>
           </div>
-          <div className="form-upload">
+          <div className="col-6 position-relative">
             {/* Membuat form untuk Upload image */}
             <label className="form-label fw-semibold" htmlFor="uploadFile">
               Image of product
@@ -116,7 +128,7 @@ function App() {
             </div>
             {/* Membuat Button Submit */}
             <button
-              type="submit"
+              type="button"
               onclick="inputdata()"
               className="btn btn-primary"
               style={{ marginLeft: "50%" }}
@@ -127,52 +139,6 @@ function App() {
         </form>
       </div>
     </div>
-    <div className="row" style={{ marginTop: "5%" }}>
-      <table className="table" id="databel">
-        <thead>
-          <tr>
-            {/* Untuk Membuat Head dari Table */}
-            <th scope="col">Product Name</th>
-            <th scope="col">Product Category</th>
-            <th scope="col">Image Of Product</th>
-            <th scope="col">Product Freshness</th>
-            <th scope="col">Description</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div className="col-md-2">
-      {/* Untuk Membuat Form Search by name */}
-      <input
-        type="text"
-        className="form-control"
-        id="Search"
-        placeholder="Search by Name"
-      />
-    </div>
-    <div className="btn-group" style={{ marginTop: "1%" }}>
-      {/* Untuk membuat button delete dan search */}
-      <button
-        type="button"
-        onclick="DeleteData()"
-        className="btn btn-primary"
-        id="delete-button"
-        style={{ width: "100%" }}
-      >
-        Deletion
-      </button>
-      <button
-        type="submit"
-        className="btn btn-outline-primary"
-        id="search-button"
-        style={{ width: "100%" }}
-      >
-        Search
-      </button>
-    </div>
-  </div>
-    );
+    </>
+    )
 }
-
-export default App;
