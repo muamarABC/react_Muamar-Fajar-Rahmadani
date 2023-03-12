@@ -20,4 +20,6 @@ Pada Live Sesion Tanggal 6 Maret 2023, Membahas Mengenai **Introduction React** 
     * Kait tidak bisa bersyarat
 
 
+* Melakukan Install NodeJS, CRA mengikuti website, saran setelah mencoba CRA coba dulu misal jalankan servernya jika sudah  merasa kurang bisa baru coba yang lain.
+
 
