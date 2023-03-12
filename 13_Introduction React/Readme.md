@@ -10,7 +10,7 @@ Pada Live Sesion Tanggal 6 Maret 2023, Membahas Mengenai **Introduction React** 
 * Virtual DOM
     
     DOM manipulation secara manual dapat membuat code berantakan, Sulit untuk mengingat DOM state sebelumnya, dan Jauh lebih lambat daripada operasi javascript pada umumnya
-    ![image.png](https://www.upload-4ever.com/ygupm4p6y6sj)
+    ![image.png](https://ibb.co/pyn0qjM)
 
 * Hooks (Penghubung)
 
