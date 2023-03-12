@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '..gambar/bs.png'
+import bs from '..gambar/bs.png'
 
 export default function main(){
     return (<>
@@ -7,7 +7,7 @@ export default function main(){
       <div className="col-md-8">
         {/* Penambahan icon dan diotimalisasi dengan style */}
         <img
-          src="gambar/bs.png"
+          src={bs}
         />
         <h1 style={{ textAlign: "center" }}>Create Product</h1>
         <p
