@@ -17,7 +17,7 @@ export default function footer(){
         </thead>
       </table>
     </div>
-    <div className="col-md-2">
+    <div className="form-search">
       {/* Untuk Membuat Form Search by name */}
       <input
         type="text"
