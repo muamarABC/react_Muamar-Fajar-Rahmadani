@@ -1,15 +1,15 @@
 import './App.css';
-import navbar from './componen/navbar';
-import main from './componen/main';
-import footer from './componen/footer';
+import Navbar from './componen/navbar';
+import Main from './componen/main';
+import Footer from './componen/footer';
 
 
 function App() {
     return (
     <div className="App">
-      <navbar />
-      <main />
-      <footer />
+      <Navbar />
+      <Main />
+      <Footer />
       </div>
     );
   }
