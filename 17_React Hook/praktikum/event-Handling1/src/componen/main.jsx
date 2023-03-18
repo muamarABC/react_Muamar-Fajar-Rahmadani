@@ -16,6 +16,16 @@ export default function main(){
     const [productDescriptionError, setProductDescriptionError] = useState(false);
     const [productPriceError, setProductPriceError] = useState(false);
 
+    // const [product, setProduct] = useState([
+    //   {
+    //     id: 1001,
+    //     productName: "Baju",
+    //     productCategory: "Fashion",
+    //     productFreshnes: "Brand New",
+    //     productDescription: "Good",
+    //     productPrice: "2"
+    //   }
+    // ]);
 
     const handleLanguage = () => {
         if (language == "english"){
@@ -23,6 +33,11 @@ export default function main(){
         } else {
             setLanguage("english");
         }
+    }
+     const handleClick = (e) => {
+        const Number = Math.floor(Math.random() * 10000)+ 1;
+        console.log({Number});
+        e.preventDefault();
     }
 
     const handleChangeProductName = (e) => {
@@ -54,11 +69,7 @@ export default function main(){
         setProductPrice(value);
     }
 
-    const handleClick = (e) => {
-        const Number = Math.random() * 10;
-        console.log({Number});
-        e.preventDefault();
-    }
+   
 
     const handleSubmit = (e) => {
         e.preventDefault();

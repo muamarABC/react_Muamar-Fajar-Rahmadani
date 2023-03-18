@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import bs from '../assets/icon.png'
 import data from '../data.json'
-// import List from "./List";
 
 export default function main(){
     const [productName, setProductName] = useState("");
