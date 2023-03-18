@@ -35,8 +35,8 @@ const First = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Features
+                  <a className="nav-link" href="#" onClick={() => navigate('/create')}>
+                    Create Product
                   </a>
                 </li>
                 <li className="nav-item">
@@ -64,7 +64,7 @@ const First = () => {
               <div className="conten-pertama">
                 <h1>Better Solutions For Your Business</h1>
                 <p>We are team of talented designers making website with Bootstrap</p>
-                <button id="Start" type="submit">
+                <button id="Start" type="submit" onClick={() => navigate('/create')}>
                   Get Started
                 </button>
                 <button id="Watch" type="submit">

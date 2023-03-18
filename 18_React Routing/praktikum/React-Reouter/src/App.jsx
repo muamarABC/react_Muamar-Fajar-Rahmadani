@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 // import './App.css'
-import Home from './Page/Home'
-import Create from './Page/Create'
+import Home from './Page/LandingPage'
+import Create from './Page/CreateProduct'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
