@@ -1,10 +1,7 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-// import './App.css'
-import Navbar from './componen/navbar'
-import Main from './componen/main'
-import List from './componen/List'
+import { useState, useEffect } from 'react';
+import Navbar from './componen/navbar';
+import Main from './componen/main';
+
 
 function App() {
   
@@ -18,7 +15,6 @@ function App() {
     <div className="App">
       <Navbar/>
       <Main/>
-      <List/>
     </div>
   )
 }
