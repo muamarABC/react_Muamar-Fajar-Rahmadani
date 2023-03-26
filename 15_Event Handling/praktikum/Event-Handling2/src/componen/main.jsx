@@ -4,85 +4,69 @@ import data from '../data.json'
 // import List from "./List";
 
 export default function main(){
-    const [productName, setProductName] = useState("");
-    const [productCategory, setProductCategory] = useState("");
-    const [productImage, setProductImage] = useState("");
-    const [productDescription, setProductDescription] = useState("");
-    const [productPrice, setProductPrice] = useState("");
-    const [language, setLanguage] = useState("english")
-    const [productNameError, setProductNameError] = useState(false);
-    const [productCategoryError, setProductCategoryError] = useState(false);
-    const [productImageError, setProductImageError] = useState(false);
-    const [productDescriptionError, setProductDescriptionError] = useState(false);
-    const [productPriceError, setProductPriceError] = useState(false);
+  const [product, setProduct] = useState([]);
+  const [productName, setProductName] = useState('');
+  const [productCategory, setProductCategory] = useState('');
+  const [productImage, setProductImage] = useState("");
+  const [productFreshness, setProductFreshness] = useState('');
+  const [productDescription, setProductDescription] = useState('');
+  const [productPrice, setProductPrice] = useState('');
+  
+  const [language, setLanguage] = useState("english")
+  const [productNameError, setProductNameError] = useState(false);
+  const [productCategoryError, setProductCategoryError] = useState(false);
+  const [productImageError, setProductImageError] = useState(false);
+  const [productDescriptionError, setProductDescriptionError] = useState(false);
+  const [productPriceError, setProductPriceError] = useState(false);
 
 
-    const handleLanguage = () => {
-        if (language == "english"){
-            setLanguage("indonesia")
-        } else {
-            setLanguage("english");
-        }
+  const handleLanguage = () => {
+    if (language == "english"){
+        setLanguage("indonesia");
+    } else {
+        setLanguage("english");
+    }
+  }
+  const handleClick = (e) => {
+    const Number = Math.random() * 10;
+    console.log({Number});
+    e.preventDefault();
+  }
+
+  const handleChangeProductName = (e) => {
+    const value = e.target.value;
+    if(value.length <= 10){
+      setProductName(value);
+      setProductNameError(value === "");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newProduct = {
+      name: productName,
+      category: productCategory,
+      freshness: productFreshness,
+      description: productDescription,
+      price: productPrice,
+    };
+
+    if (productName === "" && productCategory === "" && productImage === "" && productDescription === "" && productPrice === ""){
+      setProductNameError(true);
+      setProductCategoryError(true);
+      setProductImageError(true);
+      setProductDescriptionError(true);
+      setProductPriceError(true);
     }
 
-    const handleChangeProductName = (e) => {
-        const value = e.target.value;
-        if(value.length <= 10){
-            setProductName(value)
-            setProductNameError(value === "");
-        }
-    }
-
-    const handleChangeProductCategory = (e) => {
-        const value = e.target.value;
-        setProductCategory(value);
-        
-    }
-
-    const handleChangeProductImage = (e) => {
-        const value = e.target.value;
-        setProductImage(value);
-    }
-
-    const handleChangeProductDescription = (e) => {
-        const value = e.target.value;
-        setProductDescription(value);
-    }
-
-    const handleChangeProductPrice = (e) => {
-        const value = e.target.value;
-        setProductPrice(value);
-    }
-
-    const handleClick = (e) => {
-        const Number = Math.random() * 10;
-        console.log({Number});
-        e.preventDefault();
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (productName === ""){
-            setProductNameError(true)
-        }
-
-        if (productCategory === ""){
-            setProductCategoryError(true)
-        }
-
-        if (productImage === ""){
-            setProductImageError(true)
-        }
-
-        if (productDescription === ""){
-            setProductDescriptionError(true)
-        }
-
-        if (productPrice === ""){
-            setProductPriceError(true)
-        }
-      };
+    setProduct([...product, newProduct]);
+    setProductName("");
+    setProductCategory("");
+    setProductFreshness("");
+    setProductDescription("");
+    setProductPrice("");
+  };
 
     return (<>
       <div className='container'>
