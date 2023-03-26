@@ -1,0 +1,57 @@
+.App {
+    background-color: rgb(206, 91, 91);
+}
+
+.gambar {
+    width: 40%;
+    display: block;
+    margin-left: 12px;
+    margin-right: auto;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(59, 175, 241);
+}
+
+.About {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+}
+
+.About>h2 {
+    color: rgb(5, 5, 5);
+    font-size: 50px;
+}
+
+.form {
+    width: 420px;
+    box-shadow: rgba(0, 0, 0, 0.16) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: rgb(176, 209, 218);
+}
+
+.form-content {
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}
