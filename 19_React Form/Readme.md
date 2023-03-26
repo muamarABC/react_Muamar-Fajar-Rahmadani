@@ -54,11 +54,11 @@ Pada Controled Component dapat **Menangani Banyak Input**, dimana jika kita memb
 Berikut adalah elemen yang membuat componen menjadi controlled
 | Element | Value Property | Change Callback | New value in callback
 | ------ | ------ | ------ | ------ |
-| <<input type="text"/>/> | value="string" | onChange | event.target.value |
-| <input type="chechbox"/> | value={boolean} | onChange | event.target.checked |
-| <input type="radio"/> | value={boolean} | onChange | event.target.checked |
-| <textarea /> | value="string" | onChange | event.target.value |
-| <select /> | value="option value" | onChange | event.target.value |
+| ```<input type="text"/>```| value="string" | onChange | event.target.value |
+| ```<input type="chechbox"/>``` | value={boolean} | onChange | event.target.checked |
+| ```<input type="radio"/>``` | value={boolean} | onChange | event.target.checked |
+| ```<textarea />``` | value="string" | onChange | event.target.value |
+| ```<select />``` | value="option value" | onChange | event.target.value |
 
 ## - Uncontroled Component
 Uncontroled Component adalah sebuah alternatif untuk kita menggunakan controled component dalam sebuah form, dimana data form akan ditangani oleh DOM-nya sendiri. kita bisa menggunakan *ref* untuk mendapatkan nilai form dari DOM.
