@@ -2,7 +2,7 @@
     background-color: white;
 }
 
-.Auth-form-container {
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
     background-color: rgb(7, 101, 156);
 }
 
-.Auth-form {
+.form {
     width: 420px;
     box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
     padding-top: 30px;
@@ -20,12 +20,12 @@
     background-color: white;
 }
 
-.Auth-form-content {
+.form-content {
     padding-left: 12%;
     padding-right: 12%;
 }
 
-.Auth-form-title {
+.form-title {
     text-align: center;
     margin-bottom: 1em;
     font-size: 24px;
