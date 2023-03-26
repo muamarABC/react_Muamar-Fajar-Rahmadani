@@ -24,7 +24,6 @@ function CreateProduct() {
   const [errorMessage, setErrorMessage] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-
   const handleLanguage = () => {
     if (language == "english"){
         setLanguage("indonesia");
@@ -216,7 +215,6 @@ function CreateProduct() {
             onChange={handleFresshnesChange}
             type="radio"
             name="btnRadio"
-            defaultValue="Brand New"
             value="Brand New"
             id="Radio"
             checked={productFreshness === "Brand New"}
@@ -228,7 +226,6 @@ function CreateProduct() {
             onChange={handleFresshnesChange}
             type="radio"
             name="btnRadio"
-            defaultValue="Second Hand"
             value="Second Hand"
             id="Radio"
             checked={productFreshness === "Second Hand"}
@@ -240,7 +237,6 @@ function CreateProduct() {
             onChange={handleFresshnesChange}
             type="radio"
             name="btnRadio"
-            defaultValue="Refufbhised"
             value="Refufbhised"
             id="Radio"
             checked={productFreshness === "Refufbhised"}
