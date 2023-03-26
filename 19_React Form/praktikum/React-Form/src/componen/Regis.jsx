@@ -119,7 +119,7 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>First Name</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
               placeholder="Muamar"
             />
@@ -127,7 +127,7 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>Last Name</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
               placeholder="Fajar"
             />
@@ -135,7 +135,7 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>Username</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
               placeholder="FajarGanteng"
             />
