@@ -1,11 +1,11 @@
-// import Reg from "../componen/Register"
+import Reg from "../componen/Regis"
 
-// function Register () {
-//     return(
-//         <>
-//         <Reg/>
-//         </>
-//     )
-// }
+function Register () {
+    return(
+        <>
+        <Reg/>
+        </>
+    )
+}
 
-// export default Register
+export default Register
