@@ -10,7 +10,7 @@
 - Materi Tambahan
 
 ## - Controled Componen
-Pada HTML, elemen form seperti "<input>, <textarea>, dan <select>" biasanya menyimpan state dan memperbaruinya berdasarkan masukan dari user. Pada React, state yang bisa berubah seperti ini biasanya disimpan pada properti dari komponen, dan hanya akan diubah menggunakan **setState()**.
+Pada HTML, elemen form biasanya menyimpan state dan memperbaruinya berdasarkan masukan dari user. Pada React, state yang bisa berubah seperti ini biasanya disimpan pada properti dari komponen, dan hanya akan diubah menggunakan **setState()**.
 Kita bisa menggunakan *state* untuk menggabungkan keduanya, Sebagai contoh, jika kita ingin membuat form pada contoh sebelumnya mencatat sebuah nama ketika nama dikirim, kita dapat menuliskan form sebagai sebuah controlled component:
 
 ```javascript
