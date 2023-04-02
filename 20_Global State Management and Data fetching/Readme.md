@@ -12,12 +12,12 @@ Pada Live Sesion Tanggal 24, 27, dan 28 Maret 2023 Membahas Mengenai **Global St
 Global State Management dibuat sebagai sarana untuk memusatkan dan mengelola data dalam aplikasi, membuatnya mudah berubah dan tersedia untuk semua komponen dalam aplikasi.
 ## Redux Introduction
 Redux adalah open-source JavaScript library untuk mengelola dan memusatkan status aplikasi.
-###### **Redux Libraries dan Tools**
+###### **- Redux Libraries dan Tools**
 1.	React-Redux
 2.	Redux Toolkit
 3.	Redux DevTools Extension
 
-###### **Kapan saat yang tepat untuk menggunakan Redux**
+###### **- Kapan saat yang tepat untuk menggunakan Redux**
 1.	Banyak state yang perlu ditaruh di banyak tempat
 2.	State pada app sering berubah
 3.	Logic untuk mengubah state kompleks
