@@ -5,6 +5,7 @@ import { deleteProduct } from '../store/ProductSlice';
 
 function list () {
     const product = useSelector((state) => state.product);
+    console.log(product)
     const dispatch = useDispatch();
     const handleDelete = (id) => {
         dispatch(deleteProduct({id: id}));
@@ -24,7 +25,7 @@ function list () {
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
+        {/* <tbody>
                 {product.map((product, index) => (
                 <tr key={index}>
                     <td>{index + 1}</td>
@@ -42,7 +43,7 @@ function list () {
                     </td>
                 </tr>
                 ))}
-            </tbody>
+            </tbody> */}
         </Table>
     </div>
     )

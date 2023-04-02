@@ -3,7 +3,7 @@ import bs from '../assets/icon.png';
 import data from '../data.json';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
-import { add } from '../store/ProductSlice';
+// import { add } from '../store/ProductSlice';
 import { configureStore } from '@reduxjs/toolkit';
 // import Provider from 'react-redux';
 // import { ReactDOM } from 'react';
