@@ -3,8 +3,11 @@ import bs from '../assets/icon.png';
 import data from '../data.json';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
-import { add } from '../store/ProductSlice';
-
+// import { add } from '../store/ProductSlice';
+import { configureStore } from '@reduxjs/toolkit';
+// import Provider from 'react-redux';
+// import { ReactDOM } from 'react';
+import { useSelector } from "react-redux";
 
 
 function CreateProduct() {
@@ -26,6 +29,8 @@ function CreateProduct() {
   const [productPriceError, setProductPriceError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+
+  const products = useSelector((state) => state.products);
 
   const handleLanguage = () => {
     if (language == "english"){
@@ -91,7 +96,7 @@ function CreateProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(add({productName,productPrice}));
+    dispatch(add({id: products[products.length -1].id +1, productName, productCategory, productImage, productFreshness, productDescription, productPrice }));
 
     const newProduct = {
       name: productName,
@@ -133,14 +138,14 @@ function CreateProduct() {
     setProductDescription("");
     setProductPrice("");
   };
-  const handleDelete = (index) => {
-    const Confirm = window.confirm("Are you sure you want to delete this product?");
-    if(Confirm){
-      const newProduct = [...product];
-      newProduct.splice(index, 1);
-      setProduct(newProduct);
-    }
-  };
+  // const handleDelete = (index) => {
+  //   const Confirm = window.confirm("Are you sure you want to delete this product?");
+  //   if(Confirm){
+  //     const newProduct = [...product];
+  //     newProduct.splice(index, 1);
+  //     setProduct(newProduct);
+  //   }
+  // };
 
   console.log(product);
   return (

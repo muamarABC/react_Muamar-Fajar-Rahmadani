@@ -3,24 +3,27 @@ import {createSlice} from "@reduxjs/toolkit"
 const ProductSlice = createSlice ({
     name: "product",
     initialState:{
-        productName: "Baju",
-        productCategory: "Fashion",
-        Image : "baju.jpg",
-        productFreshnees: "Brand New",
-        productDescription : "Bagus Sekali",
-        productPrice: "12"
+        id: "1",
+        // productName: "Baju",
+        // productCategory: "Fashion",
+        // Image : "baju.jpg",
+        // productFreshnees: "Brand New",
+        // productDescription : "Bagus Sekali",
+        // productPrice: "12"
     },
     reducers:{
-        add: (state, action) =>{
-            state.productName = action.payload.productName;
-            state.productCategory = action.payload.productCategory;
-            state.Image = action.Image;
-            state.productFreshnees = action.payload.productFreshnees;
-            state.productDescription = action.payload.productDescription;
-            state.productPrice = action.payload.productPrice;
-        }
+        // add: (state, action) =>{
+        //     state.push(action.payload)
+        // },
+        // delete :()=>{
+        //     const {id} = action.payload
+        //     const del = state.find(product => product.id == id);
+        //     if(del) {
+        //         return state.filter(f => f.id !==id);
+        //     }
+        // }
     }
 })
 
-export const {add} = ProductSlice.actions;
-export default ProductSlice.reducer
+// export const {add} = ProductSlice.actions;
+export default ProductSlice.reducer;
