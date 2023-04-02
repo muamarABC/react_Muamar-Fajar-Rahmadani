@@ -19,7 +19,7 @@ const ProductSlice = createSlice ({
             const {id} = action.payload
             const del = state.find(product => product.id == id);
             if(del) {
-                return state.filter(f => f.id !==id);
+                return state.filter(f => f.id !== id);
             }
         }
     }
