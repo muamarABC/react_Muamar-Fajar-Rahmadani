@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import bs from '../assets/icon.png';
 import data from '../data.json';
-import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
+import { useDispatch } from 'react-redux';
+import { add } from '../store/ProductSlice';
 
 
 
@@ -90,6 +91,7 @@ function CreateProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(add({productName,productPrice}));
 
     const newProduct = {
       name: productName,
@@ -286,39 +288,6 @@ function CreateProduct() {
           style={{width: 300, marginTop:50, textAlign:"center" }}>
           Submit</button>
       </form>
-      <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Product Name</th>
-            <th>Product Category</th>
-            <th>Product Image</th>
-            <th>Product Freshness</th>
-            <th>Additional Description</th>
-            <th>Product Price</th>
-            <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-            {product.map((product, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{product.name}</td>
-                <td>{product.category}</td>
-                <td>{<img src={URL.createObjectURL(product.Image)} alt="Preview" width="200" />}</td>
-                <td>{product.freshness}</td>
-                <td>{product.description}</td>
-                <td>{product.price}</td>
-                <td>
-                   <button className='btn btn-danger'
-                   onClick={handleDelete}>Delete</button>
-                  <button className='btn btn-success'
-                  >Edit</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-    </Table>
   </div>
   );
 }
