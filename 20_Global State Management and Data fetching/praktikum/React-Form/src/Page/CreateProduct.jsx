@@ -6,9 +6,11 @@ import List from "../componen/list"
 function Create () {
     return(
         <>
-        <Navbar/>
-        <List/>
-
+        <div>
+            <Navbar/>
+            <Main/>
+            <List/>
+        </div>
         </>
     )
 }
