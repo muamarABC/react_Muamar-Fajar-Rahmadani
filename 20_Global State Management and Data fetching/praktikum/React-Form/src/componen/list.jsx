@@ -1,12 +1,13 @@
 import React from "react";
 import {useDispatch, useSelector } from "react-redux";
 import Table from 'react-bootstrap/Table';
+import { deleteProduct } from '../store/ProductSlice';
 
 function list () {
     const product = useSelector((state) => state.product);
     const dispatch = useDispatch();
     const handleDelete = (id) => {
-        dispatch(delete({id: id}))
+        dispatch(deleteProduct({id: id}));
     }
     return (
     <div className="container">

@@ -3,7 +3,7 @@ import bs from '../assets/icon.png';
 import data from '../data.json';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
-// import { add } from '../store/ProductSlice';
+import { add } from '../store/ProductSlice';
 import { configureStore } from '@reduxjs/toolkit';
 // import Provider from 'react-redux';
 // import { ReactDOM } from 'react';
@@ -138,14 +138,6 @@ function CreateProduct() {
     setProductDescription("");
     setProductPrice("");
   };
-  // const handleDelete = (index) => {
-  //   const Confirm = window.confirm("Are you sure you want to delete this product?");
-  //   if(Confirm){
-  //     const newProduct = [...product];
-  //     newProduct.splice(index, 1);
-  //     setProduct(newProduct);
-  //   }
-  // };
 
   console.log(product);
   return (
