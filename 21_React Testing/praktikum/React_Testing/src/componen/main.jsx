@@ -287,7 +287,7 @@ function CreateProduct() {
           type="submit"
           className="btn btn-primary center-block alert alert-primary"
           style={{width: 300, marginTop:50, textAlign:"center" }}>
-          Tambahkan Produk</button>
+          Submit</button>
       </form>
       <Table striped bordered hover>
       <thead>
