@@ -8,7 +8,7 @@ describe('Main', () => {
         const descriptionInput = screen.getByLabelText(/deskripsi/i);
         fireEvent.change(nameInput, { target: { value: 'Produk Baru' } });
         fireEvent.change(descriptionInput, { target: { value: 'Deskripsi Produk Baru' } });
-        const submitButton = screen.getByRole('button', { name: /tambahkan produk/i });
+        const submitButton = screen.getByRole('button', { name: /Submit/i });
         fireEvent.click(submitButton);
         expect(screen.getByText(/produk baru/i)).toBeInTheDocument();
         expect(screen.getByText(/deskripsi produk baru/i)).toBeInTheDocument();
