@@ -4,7 +4,6 @@ import Table from 'react-bootstrap/Table';
 import { deleteProduct } from '../store/ProductSlice';
 import { getProducts } from '../MockApi';
 import axios from"axios";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function list () {
@@ -48,8 +47,9 @@ function list () {
                     <button className='btn btn-danger'
                     onClick={e => handleSubmit(d.id)}
                     >Delete</button>
-                    <Link to={`/update/${d.id}`} className='btn btn-success'
-                    >Edit</Link>
+                    {/* <Link to={`/update/${d.id}`} className='btn btn-success'
+                    >Edit</Link> */}
+                    <button className='btn btn-success'> Edit</button>
                     </td>
                 </tr>
                 ))}
