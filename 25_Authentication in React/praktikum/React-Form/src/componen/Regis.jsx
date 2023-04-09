@@ -11,6 +11,7 @@ export default function (props) {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  
 
   const validateEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -26,6 +27,23 @@ export default function (props) {
       setPasswordError("Password Harus tidak lebih 8 Karakter");
     } else {
       setPasswordError("");
+    }
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const dummyUser = {email: 'admin@gmail.com', password: 'password123'};
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.email === email && user.password === password) {
+      localStorage.setItem('isLoggedIn', true);
+      alert("Berhasil Login");
+      navigate("/Home");
+    } else if (email === dummyUser.email && password === dummyUser.password) {
+      localStorage.setItem('user', JSON.stringify(dummyUser));
+      localStorage.setItem('isLoggedIn', true);
+      window.location.reload();
+    } else {
+      alert("Gagal Login! Email atau Password Salah")
     }
   };
 
@@ -56,7 +74,7 @@ export default function (props) {
   if (authMode === "signin") {
     return (
       <div className="form-container">
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleLogin}>
           <div className="form-content">
             <h3 className="form-title">Sign In</h3>
             <div className="text-center">
