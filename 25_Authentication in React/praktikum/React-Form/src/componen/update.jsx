@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import bs from '../assets/icon.png';
-import data from '../data.json';
+import datae from '../data.json';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
 // import { add } from '../store/ProductSlice';
@@ -10,10 +10,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useSelector } from "react-redux";
 import axios from"axios";
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
-function CreateProduct() {
+function UpdateProduct() {
   const navigate = useNavigate();
+  const {id} = useParams();
+  const [data, setData] = useState([]);
   const [productName, setProductName] = useState('');
   const [productCategory, setProductCategory] = useState('');
   const [productImage, setProductImage] = useState(null);
@@ -31,7 +34,7 @@ function CreateProduct() {
   const [productPriceError, setProductPriceError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-  const [inputData, setInputData] = useState({productName:'', productCategory:'', productFreshness:'', productDesc:'',productPrice:''})
+//   const [data, setData] = useState({productName:'', productCategory:'', productFreshness:'', productDesc:'',productPrice:''})
 
   const handleLanguage = () => {
     if (language == "english"){
@@ -94,14 +97,21 @@ function CreateProduct() {
   //       setProductPrice(e.target.value);
   //   }
   // }
+  useEffect(() => {
+    axios.get(`https://642fcea0b289b1dec4ba6a89.mockapi.io/product/${id}`)
+    .then(res => setData(res.data))
+    .catch(err => console.log(err));
+  }, [])
 
   function handleSubmit(e)  {
     e.preventDefault();
-    axios.post('https://642fcea0b289b1dec4ba6a89.mockapi.io/product', inputData)
+    axios.put(`https://642fcea0b289b1dec4ba6a89.mockapi.io/product/${id}`, data)
     .then(res => {
-      alert("Data sudah di tambahkan");
-      navigate('/create');
-    }).catch(err => console.log(err));
+        alert("data sudah di update");
+        navigate('/create');
+    }, [])
+
+    
   
   //   const newProduct = {
   //     name: productName,
@@ -144,8 +154,8 @@ function CreateProduct() {
       <div className='row'>
         <div className='text-center'>
           <img src={bs} style={{width: "20%"}}/>
-            <h2 className='text-center'>{language === "english" ? data.title.en : data.title.id}</h2>
-            <p className='text-center'>{language === "english" ? data.description.en : data.description.id}</p>
+            <h2 className='text-center'>{language === "english" ? datae.title.en : datae.title.id}</h2>
+            <p className='text-center'>{language === "english" ? datae.description.en : datae.description.id}</p>
             <button 
               onClick={handleLanguage}
               className="btn btn-info alert alert-info "
@@ -164,12 +174,12 @@ function CreateProduct() {
         className="Create-Product"
         onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="productName">{language === "english" ? data.NameProduct.en : data.NameProduct.id}</label>
+          <label htmlFor="productName">{language === "english" ? datae.NameProduct.en : datae.NameProduct.id}</label>
           <input
             type="text"
             // value={productName}
             className={productNameError ? "form-control border border-danger" : "form-control"}
-            onChange={e=>setInputData({...inputData, productName: e.target.value})}
+            onChange={e=>setData({...data, productName: e.target.value})}
             id="productName"
             placeholder="Input Product Name..."/>
             {productNameError && <span className='error-message text-danger'>Product Name is Required</span>}
@@ -177,12 +187,12 @@ function CreateProduct() {
         <div className="form-group">
 
           {/* Membuat Form Product Category */}
-          <label htmlFor="productCategory">{language === "english" ? data.CategoryProduct.en : data.CategoryProduct.id}</label>
+          <label htmlFor="productCategory">{language === "english" ? datae.CategoryProduct.en : datae.CategoryProduct.id}</label>
 
           <Form.Select aria-label="Default select example"
             // value={productCategory}
             className={errorMessage ? "form-control border border-danger" : "form-control"}
-            onChange={e=>setInputData({...inputData, productCategory: e.target.value})}
+            onChange={e=>setData({...data, productCategory: e.target.value})}
             name="productCategory"
             id="productCategory">
               <option value=''>Choose...</option>
@@ -196,7 +206,7 @@ function CreateProduct() {
         <div className="form-upload col-5"> 
         {/* Membuat form untuk Upload image */}
           <label className="form-label fw-semibold" htmlFor="uploadFile">
-          {language === "english" ? data.imageProduct.en : data.imageProduct.id}
+          {language === "english" ? datae.imageProduct.en : datae.imageProduct.id}
           </label>
            <input
               type="file"
@@ -208,11 +218,11 @@ function CreateProduct() {
               {errorMsg && <div style={{ color: 'red' }}>{errorMsg}</div>}
           {productImageError && <span className='error-message text-danger'>Product Category is Required</span>}
         </div>
-        <p>{language === "english" ? data.productFreshness.en : data.productFreshness.id}</p>
+        <p>{language === "english" ? datae.productFreshness.en : datae.productFreshness.id}</p>
         <div className="form-check">
           <input
             className="form-check-input"
-            onChange={e=>setInputData({...inputData, productFreshness: e.target.value})}
+            onChange={e=>setData({...data, productFreshness: e.target.value})}
             type="radio"
             name="btnRadio"
             value="Brand New"
@@ -223,7 +233,7 @@ function CreateProduct() {
           <br />
           <input
             className="form-check-input"
-            onChange={e=>setInputData({...inputData, productFreshness: e.target.value})}
+            onChange={e=>setData({...data, productFreshness: e.target.value})}
             type="radio"
             name="btnRadio"
             value="Second Hand"
@@ -234,7 +244,7 @@ function CreateProduct() {
           <br />
           <input
             className="form-check-input"
-            onChange={e=>setInputData({...inputData, productFreshness: e.target.value})}
+            onChange={e=>setData({...data, productFreshness: e.target.value})}
             type="radio"
             name="btnRadio"
             value="Refufbhised"
@@ -247,20 +257,20 @@ function CreateProduct() {
         {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
         <div className="form-group">
         {/* Membuat input deskrisi */}
-        <label htmlFor="Description">{language === "english" ? data.Description.en : data.Description.id}</label>
+        <label htmlFor="Description">{language === "english" ? datae.Description.en : datae.Description.id}</label>
         <textarea
         className={productDescriptionError ? "form-control mb-3 border border-danger" : "form-control"}
         // value={productDescription}
         name="Description"
         id="Description"
-        onChange={e=>setInputData({...inputData, productDesc: e.target.value})}
+        onChange={e=>setData({...data, productDesc: e.target.value})}
         rows={3}
         defaultValue={""}>
         </textarea>
         {productDescriptionError && <span className='error-message text-danger'>Product Description is Required</span>}
         </div>
         {/*Product Price*/}
-        <label>{language === "english" ? data.Price.en : data.Price.id}</label>
+        <label>{language === "english" ? datae.Price.en : datae.Price.id}</label>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
             <span className="input-group-text">$</span>
@@ -269,7 +279,7 @@ function CreateProduct() {
             // value={productPrice}
             type="number"
             className={productPriceError ? "form-control border border-danger" : "form-control"}
-            onChange={e=>setInputData({...inputData, productPrice: e.target.value})}
+            onChange={e=>setData({...data, productPrice: e.target.value})}
             aria-label="Amount (to the nearest dollar)"
             name="Price"
             id="Price"
@@ -288,4 +298,4 @@ function CreateProduct() {
   );
 }
 
-export default CreateProduct;
+export default UpdateProduct;
