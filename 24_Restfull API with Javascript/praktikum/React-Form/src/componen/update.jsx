@@ -1,0 +1,301 @@
+import React, { useEffect, useState } from 'react';
+import bs from '../assets/icon.png';
+import datae from '../data.json';
+import Form from 'react-bootstrap/Form';
+import { useDispatch } from 'react-redux';
+// import { add } from '../store/ProductSlice';
+import { configureStore } from '@reduxjs/toolkit';
+// import Provider from 'react-redux';
+// import { ReactDOM } from 'react';
+import { useSelector } from "react-redux";
+import axios from"axios";
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
+
+function UpdateProduct() {
+  const navigate = useNavigate();
+  const {id} = useParams();
+  const [data, setData] = useState([]);
+  const [productName, setProductName] = useState('');
+  const [productCategory, setProductCategory] = useState('');
+  const [productImage, setProductImage] = useState(null);
+  const [productFreshness, setProductFreshness] = useState('');
+  const [productDescription, setProductDescription] = useState('');
+  const [productPrice, setProductPrice] = useState('');
+  const [product, setProduct] = useState([]);
+  const [error, setError] = useState('');
+  const [language, setLanguage] = useState("english");
+  // const [file, setFile] = useState(null);
+
+  const [productNameError, setProductNameError] = useState(false);
+  const [productImageError, setProductImageError] = useState(false);
+  const [productDescriptionError, setProductDescriptionError] = useState(false);
+  const [productPriceError, setProductPriceError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+//   const [data, setData] = useState({productName:'', productCategory:'', productFreshness:'', productDesc:'',productPrice:''})
+
+  const handleLanguage = () => {
+    if (language == "english"){
+        setLanguage("indonesia");
+    } else {
+        setLanguage("english");
+    }
+  }
+
+  const handleClick = (e) => {
+    const Number = Math.random() * 10;
+    console.log({Number});
+    e.preventDefault();
+  }
+
+  // const handleProductNameChange = (e) => {
+  //   const regex = /^[a-zA-Z0-9\s]{0,10}$/;
+  //   const inputName = e.target.value;
+  //   if (regex.test(inputName)) {
+  //     setProductName(inputName);
+  //   } else {
+  //     alert('Harus Huruf dan Tidak Lebih dari 10');
+  //     e.target.value = '';
+  //   }
+  // };
+
+  // const handleProductCategoryChange = (e) => {
+  //   setProductCategory(e.target.value)
+  //   if (e.target.value === '') {
+  //     setErrorMessage('Pilih salah satu opsi');
+  //   } else {
+  //     setErrorMessage('');
+  //   }
+  // }
+
+  // const handleFresshnesChange = (e) => {
+  //   setProductFreshness(e.target.value);
+  //   if (e.target.value === '') {
+  //     setErrorMessage('Pilih salah satu opsi');
+  //   } else {
+  //     setErrorMessage('');
+  //   }
+  // }
+
+  // const handleUploadChange = (e) => {
+  //   const file = e.target.files[0];
+  //   const regex = /jpeg|jpg|png/;
+  //   if (regex.test(file.type)) {
+  //     setFile(file);
+  //   } else {
+  //     alert('Upload Format JPG atau PNG!');
+  //     setErrorMsg("Upload Format JPG atau PNG!")
+  //     e.target.value = null;
+  //   }
+  // };
+
+  // const handlePriceProductChange = (e) => {
+  //   const regex = /^[0-9]+(\.[0-9]{1,2})?$/;
+  //   if(regex.test(e.target.value)){
+  //       setProductPrice(e.target.value);
+  //   }
+  // }
+  useEffect(() => {
+    axios.get(`https://642fcea0b289b1dec4ba6a89.mockapi.io/product/${id}`)
+    .then(res => setData(res.data))
+    .catch(err => console.log(err));
+  }, [])
+
+  function handleSubmit(e)  {
+    e.preventDefault();
+    axios.put(`https://642fcea0b289b1dec4ba6a89.mockapi.io/product/${id}`, data)
+    .then(res => {
+        alert("data sudah di update");
+        navigate('/create');
+    }, [])
+
+    
+  
+  //   const newProduct = {
+  //     name: productName,
+  //     category: productCategory,
+  //     Image : file,
+  //     freshness: productFreshness,
+  //     description: productDescription,
+  //     price: productPrice,
+  //   };
+
+  //   if (productName === ""){
+  //     setProductNameError(true);
+  //   }
+    
+  //   if (file === null){
+  //     setProductImageError(true);
+  //   }
+   
+  //   if (productDescription === "") {
+  //     setProductDescriptionError(true);
+  //   }
+  //   if (productPrice === ""){
+  //     setProductPriceError(true);
+  //   }
+  //   if (productCategory === ''){
+  //     setErrorMessage("Pilih Salah Satu");
+  //     return;
+  //   }
+  //   if (productFreshness === ''){
+  //     setErrorMessage("Pilih Salah satu Opsi");
+  //     return;
+  //   }
+  //   setProduct([...product, newProduct]);
+    
+  };
+
+  // console.log(product);
+  return (
+    <div className='container'>
+      <div className='row'>
+        <div className='text-center'>
+          <img src={bs} style={{width: "20%"}}/>
+            <h2 className='text-center'>{language === "english" ? datae.title.en : datae.title.id}</h2>
+            <p className='text-center'>{language === "english" ? datae.description.en : datae.description.id}</p>
+            <button 
+              onClick={handleLanguage}
+              className="btn btn-info alert alert-info "
+              >{language === "english" ? "Bahasa Indonesia" : "Bahasa Inggris"}
+            </button>
+            <button
+                type='generate' 
+                onClick={handleClick}
+                className="btn btn-success alert alert-success "
+              >Generate Number
+              </button>
+        </div>
+        <h2 style={{textAlign: "center"}}>Detail Product</h2>
+      </div>
+      <form 
+        className="Create-Product"
+        onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="productName">{language === "english" ? datae.NameProduct.en : datae.NameProduct.id}</label>
+          <input
+            type="text"
+            // value={productName}
+            className={productNameError ? "form-control border border-danger" : "form-control"}
+            onChange={e=>setData({...data, productName: e.target.value})}
+            id="productName"
+            placeholder="Input Product Name..."/>
+            {productNameError && <span className='error-message text-danger'>Product Name is Required</span>}
+        </div>
+        <div className="form-group">
+
+          {/* Membuat Form Product Category */}
+          <label htmlFor="productCategory">{language === "english" ? datae.CategoryProduct.en : datae.CategoryProduct.id}</label>
+
+          <Form.Select aria-label="Default select example"
+            // value={productCategory}
+            className={errorMessage ? "form-control border border-danger" : "form-control"}
+            onChange={e=>setData({...data, productCategory: e.target.value})}
+            name="productCategory"
+            id="productCategory">
+              <option value=''>Choose...</option>
+              <option value='Fashion'>Fashion</option>
+              <option value='Elektronik'>Elektronik</option>
+              <option value='Makanan'>Makanan</option>
+            </Form.Select>
+            {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+
+        </div>
+        <div className="form-upload col-5"> 
+        {/* Membuat form untuk Upload image */}
+          <label className="form-label fw-semibold" htmlFor="uploadFile">
+          {language === "english" ? datae.imageProduct.en : datae.imageProduct.id}
+          </label>
+           <input
+              type="file"
+              // value={productImage}
+              className={productImageError ? "form-control border border-danger":"form-control"}
+              id="uploadFile"
+              // onChange={handleUploadChange}
+              name="uploadFile"/>
+              {errorMsg && <div style={{ color: 'red' }}>{errorMsg}</div>}
+          {productImageError && <span className='error-message text-danger'>Product Category is Required</span>}
+        </div>
+        <p>{language === "english" ? datae.productFreshness.en : datae.productFreshness.id}</p>
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            onChange={e=>setData({...data, productFreshness: e.target.value})}
+            type="radio"
+            name="btnRadio"
+            value="Brand New"
+            id="Radio"
+            checked={productFreshness === "Brand New"}
+          />
+          Brand New
+          <br />
+          <input
+            className="form-check-input"
+            onChange={e=>setData({...data, productFreshness: e.target.value})}
+            type="radio"
+            name="btnRadio"
+            value="Second Hand"
+            id="Radio"
+            checked={productFreshness === "Second Hand"}
+          />
+          Second Hand
+          <br />
+          <input
+            className="form-check-input"
+            onChange={e=>setData({...data, productFreshness: e.target.value})}
+            type="radio"
+            name="btnRadio"
+            value="Refufbhised"
+            id="Radio"
+            checked={productFreshness === "Refufbhised"}
+          />
+        Refufbhised
+        <br />
+        </div>
+        {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+        <div className="form-group">
+        {/* Membuat input deskrisi */}
+        <label htmlFor="Description">{language === "english" ? datae.Description.en : datae.Description.id}</label>
+        <textarea
+        className={productDescriptionError ? "form-control mb-3 border border-danger" : "form-control"}
+        // value={productDescription}
+        name="Description"
+        id="Description"
+        onChange={e=>setData({...data, productDesc: e.target.value})}
+        rows={3}
+        defaultValue={""}>
+        </textarea>
+        {productDescriptionError && <span className='error-message text-danger'>Product Description is Required</span>}
+        </div>
+        {/*Product Price*/}
+        <label>{language === "english" ? datae.Price.en : datae.Price.id}</label>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text">$</span>
+          </div>
+          <input
+            // value={productPrice}
+            type="number"
+            className={productPriceError ? "form-control border border-danger" : "form-control"}
+            onChange={e=>setData({...data, productPrice: e.target.value})}
+            aria-label="Amount (to the nearest dollar)"
+            name="Price"
+            id="Price"
+          />
+          {productPriceError && <span className='error-message text-danger'>Product Price is Required</span>}
+        </div>
+
+        {error && <p>{error}</p>}
+        <button 
+          type="submit"
+          className="btn btn-primary center-block alert alert-primary"
+          style={{width: 300, marginTop:50, textAlign:"center" }}>
+          Submit</button>
+      </form>
+  </div>
+  );
+}
+
+export default UpdateProduct;
