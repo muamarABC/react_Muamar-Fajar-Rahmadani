@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 import ProductReducer from "./store/ProductSlice";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import {  ApolloProvider } from '@apollo/client';
+import client from './apollo-client'
 
  const store = configureStore({
   reducer: {
@@ -14,9 +15,11 @@ import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    </React.StrictMode>
+    <ApolloProvider client={client}>
+      <React.StrictMode>
+          <Provider store={store}>
+              <App/>
+          </Provider>
+      </React.StrictMode>
+    </ApolloProvider>
 )
