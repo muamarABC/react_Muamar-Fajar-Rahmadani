@@ -1,36 +1,17 @@
-GraphQL Query and Mutation [![Build Status](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://id.reactjs.org/docs/forms.html)
-##### Pada Live Sesion  Membahas Mengenai **GraphQL Query and Mutation** dimana meliputi berbagai materi sebagai berikut:
-- Pengertian mengenai Query GraphQL
-- Pengeretian Mutasi
-- Cara menggunakan Query dengan apollo client
-## Query
-#### - Cara menggunakan Query dengan apollo client :
- 1.	Import gql dan useQuery atau anda bisa langsung menyalin dari hasura.
-2.	Memanggil useQuery dengan tujuan mendapatkan data awal
-3.	Melakukan komsumsi data yang terdapat pada kode jsx, pastikan bahwa pada permintaan pertama data adalah nol sehingga perlu menggunakan rangkaian opsional untuk menghindari kesalahan.
-Penggunaan Query dengan Apollo Client – Lazy Query :
-useLazyQuery sangat cocok untuk mengeksekusi Query sebagai respons selain rendering komponen. Berbeda dengan useQuery, pemanggilan useLazyQuery, tidak akan segera mengeksekusi Query yang terkait. 
-Penggunaan Query dengan Apollo Client – Refetching :
-Refetching merupakan proses pengambilan ulang yang memungkinkan dalam menyegarkan hasil Query sebagai respons terhadap tindakan seorang pengguna. Refetching tidak menggunakan interval tetap. Cara kerjanya adalah secara opsional yaitu dengan memberikan objek variabel baru ke fungsi refetch. Jika tidak, Query akan secara otomatis menggunakan variabel yang sama dengan yang digunakan dalam eksekusi sebelumnya
-## Mutation
-#### - Cara menggunakan mutation dengan apollo client :
-1.	Import useMutation hooks dari apollo client dan definisikan.
-Penggunaan mutation insert dengan apollo client :
-1.	Aktifkan useMutation dan gunakan array destruction define mutation handler (insert).
-2.	Panggil fungsi insert dengan sebuah variabel.
-#### - Penggunaan mutation update dengan apollo client :
-1.	Definisikan update Query
-2.	Buatlah mutation handler untuk mengupdate
-3.	Panggil fungsi update Query.
-#### - Penggunaan mutation delete dengan apollo client :
-1.	Definisikan delete Query.
-2.	Buatlah mutation handler untuk 
 
-# Mutasi Untuk Login
-```sh
-mutation Login($email: String!) {
-  login(email: $email) {
-    token
-  }
-}
-```
+GraphQL – Subscription [![Build Status](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://id.reactjs.org/docs/forms.html)
+##### Pada Live Sesion  Membahas Mengenai **GraphQL – Subscription** dimana meliputi berbagai materi sebagai berikut:
+- Pengertian GraphQL – Subscription
+- Cara menggunakan Subscriptio 
+-  Penggunaan Subscription dengan menggunakan useSubscription :
+
+##### - Cara menggunakan Subscription :
+-	Menginstall subscriptions-transport-ws untuk mengaktifkan koneksi ke websocket, yaitu dengan yarn add @apollo/client subscriptions-transport-ws
+-	Import semua modul yang diperlukan dan pisahkan antara http dan websocket.
+-	Buat httpLink untuk Query dan mutation, wsLink untuk subscription serta tambahkan header untuk authentication.
+-	Tambahkan split function dan gunakan fungsi tersebut sebagai tautan pada saat kita membuat client. Fungsi split ini digunakan untuk menggabungkan dua buah Link menjadi satu Link dengan jenis operasi yang dijalankan.
+##### - Penggunaan Subscription dengan menggunakan useSubscription :
+-	Import Subscription dari apollo client dan lakukan definisi.
+-	Aktifkan Subscription dan mulai untuk menggunakannya.
+##### - Penggunaan Subscription dengan menggunakan subscribeToMore :
+subscribeToMore merupakan fungsi yang digunakan unuk  menjalankan Subscription, subscribeToMore biasanya digunakan untuk Subscription pada bidang tertentu yang disertai dengan Query. Pada umumnya subscribeToMore digunakan ketika server akan mengembalikan 1 data yang akan diperbarui, atau dengan kata lain pada saat memperbarui data sebelumnya fungsi ini akan mengembalikan data yang diperbarui.
